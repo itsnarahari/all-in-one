@@ -10,7 +10,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Setter@Getter@NoArgsConstructor@AllArgsConstructor
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Developers {
 

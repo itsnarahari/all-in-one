@@ -14,20 +14,21 @@ public class DevelopersService {
     @Autowired
     DevelopersRepository repository;
 
-    public Developers saveDevelopers(Developers developers){
+    public Developers saveDevelopers(Developers developers) {
 
         return repository.save(developers);
     }
-    public List<Developers> getAllDevelopers(){
+
+    public List<Developers> getAllDevelopers() {
 
         return repository.findAll();
     }
 
-    public Developers getDeveloperById(int id){
-        return repository.findById(id).orElseThrow(()->new ResourceNotFoundException("User not found with id :" + id));
+    public Developers getDeveloperById(int id) {
+        return repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User not found with id :" + id));
     }
 
-    public void deleteDeveloperById(int id){
+    public void deleteDeveloperById(int id) {
 
         Developers existingUser = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id :" + id));

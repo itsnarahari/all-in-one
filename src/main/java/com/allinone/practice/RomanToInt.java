@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class RomanToInt {
 
-    public int romanToInt(String roman){
+    public int romanToInt(String roman) {
 
         /*
         - Construct Map for roman
@@ -21,14 +21,13 @@ public class RomanToInt {
         - let's start
          */
 
-        Map<Character,Integer> romanMap = new HashMap<>();
+        Map<Character, Integer> romanMap = new HashMap<>();
 
         char charArray[] = roman.toCharArray();
         List list = new ArrayList();
-        for(char c: charArray)
+        for (char c : charArray)
 
             list.add(romanMap.get(c));
-
 
 
         return 0;

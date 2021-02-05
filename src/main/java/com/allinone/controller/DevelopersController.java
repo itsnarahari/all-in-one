@@ -38,7 +38,7 @@ public class DevelopersController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity deleteDeveloperById(@PathVariable Integer id) {
-            service.deleteDeveloperById(id);
-            return new ResponseEntity(1, HttpStatus.OK);
+        service.deleteDeveloperById(id);
+        return new ResponseEntity(1, HttpStatus.OK);
     }
 }
