@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("alien")
+@RequestMapping("/developer")
 public class DevelopersController {
 
 
@@ -20,31 +20,25 @@ public class DevelopersController {
         return new ResponseEntity("pong", HttpStatus.OK);
     }
 
-    @PostMapping("/")
-    public ResponseEntity saveAlien(@RequestBody Developers developers) {
+    @PostMapping
+    public ResponseEntity saveDeveloper(@RequestBody Developers developers) {
 
-        return new ResponseEntity(service.saveAlien(developers), HttpStatus.OK);
+        return new ResponseEntity(service.saveDevelopers(developers), HttpStatus.OK);
     }
 
-    @GetMapping("/")
-    public ResponseEntity getAllAlien() {
-        return new ResponseEntity(service.getAllAliens(), HttpStatus.OK);
+    @GetMapping
+    public ResponseEntity getAllDevelopers() {
+        return new ResponseEntity(service.getAllDevelopers(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getAlienById(@RequestParam Integer id) {
-        return new ResponseEntity(service.getAlien(id), HttpStatus.OK);
+    public ResponseEntity getDeveloperById(@PathVariable Integer id) {
+        return new ResponseEntity(service.getDeveloperById(id), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteAlien(@RequestParam Integer id) {
-
-        try {
-            service.deleteById(id);
+    public ResponseEntity deleteDeveloperById(@PathVariable Integer id) {
+            service.deleteDeveloperById(id);
             return new ResponseEntity(1, HttpStatus.OK);
-        } catch (Exception ex) {
-            service.deleteById(id);
-            return new ResponseEntity(ex, HttpStatus.OK);
-        }
     }
 }
