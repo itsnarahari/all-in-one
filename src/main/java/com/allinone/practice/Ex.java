@@ -4,7 +4,6 @@ public class Ex {
 
     public static void main(String[] args) {
 
-
         String s1="Hai"; String s2="Hai";
 
         String s3 = new String("Hai");
